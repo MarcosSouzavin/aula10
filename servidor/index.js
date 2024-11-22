@@ -37,6 +37,16 @@ app.post('/aula10', (req, res) => {
         res.json(results);
     });
 });
+//rota para consultar os alunos 
+app.get('/aula10', (req, res) => {
+    const sql = 'SELECT*FROM aula10';
+    db.query(sql, (err, results) => {
+        if(err){
+            return res.status(500).json({ error: 'Erro ao consultar alunos' });
+        }
+        res.json(results);
+    });
+});
 
 app.listen(PORT, ()=>{
     console.log(`servidor rodando em https://localhost:${PORT}`);
