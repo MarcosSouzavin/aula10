@@ -23,3 +23,21 @@ db.connect((erro)=> {
         console.log('Conectando ao mysql com sucesso')
     }
 });
+
+//rota para cadastrar os alunos 
+app.post('/aula10', (req, res) => {
+    const { nome, cidade, estado } = req.body;
+    const sql = 'INSERT INTO alunos (nome, cidade, estado) VALUES (?, ?, ?)';
+    db.query(sql, [nome, cidade, estado], (err, result) => {
+        if(err)
+        {
+            return res.status(500).json({ error: 'erro ao cadastrar aluno.'});
+        }
+        res.status(201).json({message: 'Alunos cadastrado com sucesso!', id: result.insertId});
+        res.json(results);
+    });
+});
+
+app.listen(PORT, ()=>{
+    console.log(`servidor rodando em https://localhost:${PORT}`);
+});
