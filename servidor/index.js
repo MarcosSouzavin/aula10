@@ -27,7 +27,7 @@ db.connect((erro)=> {
 //rota para cadastrar os alunos 
 app.post('/aula10', (req, res) => {
     const { nome, cidade, estado } = req.body;
-    const sql = 'INSERT INTO alunos (nome, cidade, estado) VALUES (?, ?, ?)';
+    const sql = 'INSERT INTO aula10 (nome, cidade, estado) VALUES (?, ?, ?)';
     db.query(sql, [nome, cidade, estado], (err, result) => {
         if(err)
         {
