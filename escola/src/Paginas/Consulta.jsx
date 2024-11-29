@@ -13,7 +13,7 @@ export default function Consulta()
     {
         try 
         {
-            const response = await axios.get('http://localhost:3001/alunos');
+            const response = await axios.get('http://localhost:3001/aula10');
             setAlunos(response.data);
         } catch (error) {
             alert(error);

@@ -13,7 +13,7 @@ export default function Cadastro()
     {
         try 
         {
-            await axios.post('http://localhost:3001/alunos', { nome, cidade, estado });
+            await axios.post('http://localhost:3001/aula10', { nome, cidade, estado });
 
             setResultado("Aluno " + nome + " cadastrado com sucesso!");
             setNome("");
